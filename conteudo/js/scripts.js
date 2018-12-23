@@ -88,12 +88,21 @@ var teste = idade !== 45;
 console.log(teste); 
 */
 
-var v_type = true;
-var v_numero = 4.55;
-var idade = 21;
-var v_boolean = idade > 18;
+// var v_type = true;
+// var v_numero = 4.55;
+// var idade = 21;
+// var v_boolean = idade > 18;
 
-console.log(typeof v_type);
-console.log(typeof idade);
-console.log(typeof v_numero); 
-console.log(typeof v_boolean);
+// console.log(typeof v_type);
+// console.log(typeof idade);
+// console.log(typeof v_numero); 
+// console.log(typeof v_boolean);
+
+//Aula 07
+var undf; 
+var nl = null;
+console.log(undf); 
+console.log(nl); 
+console.log(nl === undf); 
+console.log(typeof undf); 
+console.log(typeof nl); 
