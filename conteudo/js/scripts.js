@@ -98,11 +98,19 @@ console.log(teste);
 // console.log(typeof v_numero); 
 // console.log(typeof v_boolean);
 
-//Aula 07
-var undf; 
-var nl = null;
-console.log(undf); 
-console.log(nl); 
-console.log(nl === undf); 
-console.log(typeof undf); 
-console.log(typeof nl); 
+// Aula 07
+// var undf; 
+// var nl = null;
+// console.log(undf); 
+// console.log(nl); 
+// console.log(nl === undf); 
+// console.log(typeof undf); 
+// console.log(typeof nl); 
+
+// Aula 10
+var conteudo_caixa = document.getElementById("caixa_azul").innerHTML;
+console.log(conteudo_caixa);
+document.getElementById("caixa_amarela").innerHTML = conteudo_caixa;
+
+document.getElementById("caixa_azul").innerHTML = '<h1>'+conteudo_caixa+'</h1>';
+document.getElementById("caixa_amarela").innerHTML = '<h1>' + 'Caixa Amarela' + '</h1>';
