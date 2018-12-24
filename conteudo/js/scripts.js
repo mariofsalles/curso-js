@@ -107,10 +107,43 @@ console.log(teste);
 // console.log(typeof undf); 
 // console.log(typeof nl); 
 
-// Aula 10
-var conteudo_caixa = document.getElementById("caixa_azul").innerHTML;
-console.log(conteudo_caixa);
-document.getElementById("caixa_amarela").innerHTML = conteudo_caixa;
+// // Aula 10
+// var conteudo_caixa = document.getElementById("caixa_azul").innerHTML;
+// console.log(conteudo_caixa);
+// document.getElementById("caixa_amarela").innerHTML = conteudo_caixa;
 
-document.getElementById("caixa_azul").innerHTML = '<h1>'+conteudo_caixa+'</h1>';
-document.getElementById("caixa_amarela").innerHTML = '<h1>' + 'Caixa Amarela' + '</h1>';
+// document.getElementById("caixa_azul").innerHTML = '<h1>'+conteudo_caixa+'</h1>';
+// document.getElementById("caixa_amarela").innerHTML = '<h1>' + 'Caixa Amarela' + '</h1>';
+
+// Aula 11
+//Define-se a função
+function soma_numeros() {
+  var x = 5;
+  var y = 2;
+  var soma = x + y;
+  console.log(soma);
+}
+//invoca-se a função
+soma_numeros();
+
+// função dinâmica e com argumentos
+function soma_args(num1, num2) {
+    var soma = num1 + num2;
+    return soma; //usa-se o return porque a aplicabilidade torna-se melhor, podendo ser invocada em qq elemento html
+}
+// invoca-se a função com argumentos:
+// podendo ser armazenado na saida do console ou numa variavel que 
+console.log(soma_args(10, 25));
+
+console.log("-----------------------------------")
+
+function valor_imc(peso, altura) {
+  var imc = peso / (altura * altura);
+  return imc;
+}
+// agora podemos guardar o valor retornado pela função numa variável e usá-la como quisermos.
+var meu_peso = document.getElementById("peso").innerHTML;
+var minha_altura = document.getElementById("altura").innerHTML;
+document.getElementById("imc").innerHTML = valor_imc(meu_peso, minha_altura);
+var meu_imc = document.getElementById("imc").innerHTML
+console.log(meu_imc);
