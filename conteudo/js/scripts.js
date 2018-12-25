@@ -266,10 +266,19 @@ console.log(teste);
 // }
 
 // Aula 17
-document.getElementById("botao_cor").onclick = function () {
-  // usado a notação entre colchetes ao invés do ponto e inserido entre aspas devido
-  // o hífen para o caso da propriedade background-color
-  this.style['background-color'] = "purple"; 
-  this.style.transform = "translateX(100px)";
-}
+// document.getElementById("botao_cor").onclick = function () {
+// usado a notação entre colchetes ao invés do ponto e inserido entre aspas devido
+// o hífen para o caso da propriedade background-color
+//   this.style['background-color'] = "purple"; 
+//   this.style.transform = "translateX(100px)";
+// }
 
+// Aula 18
+// Observar que o getElementsByClassName retorna 
+// um array enquanto que o getElementById um unico elemento
+var exemplo = document.getElementsByClassName("exemplo");
+exemplo[0].innerHTML = 'Teste 1';
+console.log(exemplo);
+console.log('-----------------------------');
+var exemplo = document.getElementsByTagName("p");
+console.log(exemplo);
