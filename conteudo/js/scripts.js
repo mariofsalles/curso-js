@@ -284,31 +284,46 @@ console.log(teste);
 // console.log(exemplo);
 
 //Aula 19
-for (var i = 0; i < 5; i++) {
-  console.log(i)
-}
-console.log('----------------')
-var alunos = ['Jose', 'Maria', 'Marcos', 'Serafim', 'Clara'];
-console.log(alunos)
-console.log('----------------')
-for (var count = 0; count < alunos.length; count++) {
-console.log(alunos[count]);
-}
-console.log('----------------')
-var carro = {
-  'Ano': 2018,
-  'Modelo': 'Fox',
-  'Cilindradas': '1.8',
-  'Combustível': 'Gasolina'
-}
-for (var prop in carro){
-  console.log(prop + ':' + carro[prop]);
-}
-console.log('----------------')
-var elementos = document.getElementsByClassName('exemplo');
-console.log(elementos);
+// for (var i = 0; i < 5; i++) {
+//   console.log(i)
+// }
+// console.log('----------------')
+// var alunos = ['Jose', 'Maria', 'Marcos', 'Serafim', 'Clara'];
+// console.log(alunos)
+// console.log('----------------')
+// for (var count = 0; count < alunos.length; count++) {
+// console.log(alunos[count]);
+// }
+// console.log('----------------')
+// var carro = {
+//   'Ano': 2018,
+//   'Modelo': 'Fox',
+//   'Cilindradas': '1.8',
+//   'Combustível': 'Gasolina'
+// }
+// for (var prop in carro){
+//   console.log(prop + ':' + carro[prop]);
+// }
+// console.log('----------------')
+// var elementos = document.getElementsByClassName('exemplo');
+// console.log(elementos);
 
-for (var cont = 0; cont < elementos.length; cont++){
-  elementos[cont].style.color = 'red';
-  elementos[cont].style['font-weight'] = 'bold';
-  }
+// for (var cont = 0; cont < elementos.length; cont++){
+//   elementos[cont].style.color = 'red';
+//   elementos[cont].style['font-weight'] = 'bold';
+//   }
+
+// Aula 20
+var count = 0;
+while (count < 5){
+  console.log(count);
+  count++
+}
+console.log('--------------')
+var count2 = 10;
+// Irá executar o codigo pelo menos uma vez antes de testar o while
+do {
+  console.log(count2);
+  count2++;
+}
+while (count2 < 5);
