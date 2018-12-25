@@ -116,34 +116,65 @@ console.log(teste);
 // document.getElementById("caixa_amarela").innerHTML = '<h1>' + 'Caixa Amarela' + '</h1>';
 
 // Aula 11
-//Define-se a função
-function soma_numeros() {
-  var x = 5;
-  var y = 2;
-  var soma = x + y;
-  console.log(soma);
-}
-//invoca-se a função
-soma_numeros();
-
+// Define-se a função
+// function soma_numeros() {
+//   var x = 5;
+//   var y = 2;
+//   var soma = x + y;
+//   console.log(soma);
+// }
+// //invoca-se a função
+// soma_numeros();
 // função dinâmica e com argumentos
-function soma_args(num1, num2) {
-    var soma = num1 + num2;
-    return soma; //usa-se o return porque a aplicabilidade torna-se melhor, podendo ser invocada em qq elemento html
-}
+// function soma_args(num1, num2) {
+//     var soma = num1 + num2;
+//     return soma; //usa-se o return porque a aplicabilidade torna-se melhor, podendo ser invocada em qq elemento html
+// }
 // invoca-se a função com argumentos:
 // podendo ser armazenado na saida do console ou numa variavel que 
-console.log(soma_args(10, 25));
-
-console.log("-----------------------------------")
-
-function valor_imc(peso, altura) {
-  var imc = peso / (altura * altura);
-  return imc;
-}
+// console.log(soma_args(10, 25));
+// console.log("-----------------------------------")
+// function valor_imc(peso, altura) {
+//   var imc = peso / (altura * altura);
+//   return imc;
+// }
 // agora podemos guardar o valor retornado pela função numa variável e usá-la como quisermos.
-var meu_peso = document.getElementById("peso").innerHTML;
-var minha_altura = document.getElementById("altura").innerHTML;
-document.getElementById("imc").innerHTML = valor_imc(meu_peso, minha_altura);
-var meu_imc = document.getElementById("imc").innerHTML
-console.log(meu_imc);
+// var meu_peso = document.getElementById("peso").innerHTML;
+// var minha_altura = document.getElementById("altura").innerHTML;
+// document.getElementById("imc").innerHTML = valor_imc(meu_peso, minha_altura);
+// var meu_imc = document.getElementById("imc").innerHTML
+// console.log(meu_imc);
+
+//Aula 12
+var alunos = ["João", "Maria", "José"];
+var num_primos = [2, 3, 5, 7, 11, 13];
+console.log(alunos.length);
+console.log(num_primos[2]);
+console.log(num_primos[10]);
+console.log('------------------------------')
+//Arrays multidimensionais
+var grupos = [
+  ["João", "Maria"],
+  ["Pedro", "Joana", "André", "Júlio"],
+  ["Carolina", "Helena", "Marcelo"]
+];
+console.log(grupos[1][1]);
+grupos[1][1] = "Marcela"; // troca o elemento por outro
+console.log(grupos[1][1]);
+console.log(grupos);
+console.log('------------------------------')
+
+var cursos = ["HTML", "Python", "PHP"];
+cursos.push("Javascript"); // insere no final do array
+console.log(cursos); 
+cursos.unshift("Bootstrap"); // insere no inicio do array
+console.log(cursos);  
+cursos.pop(); // remove no fim do array
+console.log(cursos); 
+cursos.shift(); // remove no inicio do array
+console.log(cursos); 
+console.log('------------------------------')
+console.log(cursos.slice(0,2)); // o segundo parametro no slice não é contado, neste caso retorna-se os elementos 0, 1 e 2.
+console.log('Convenção para numeros negativos');
+console.log(cursos.slice(0,-1));
+console.log(cursos.slice(-2,)); // neste caso irá pegar no penultimo(indicado pelo indice -2) até o ultimo.
