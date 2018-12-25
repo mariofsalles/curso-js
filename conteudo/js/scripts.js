@@ -179,42 +179,66 @@ console.log(teste);
 // console.log(cursos.slice(-2,)); // neste caso irá pegar no penultimo(indicado pelo indice -2) até o ultimo.
 
 // Aula 13
-var funcionario = {
-  'nome': 'Pedro Souza Gomes',
-  'ano_nasc': 1972,
-  'cpf': '111.111.111.11',
-  'cargo': 'Analista de Sistemas'
-};
+// var funcionario = {
+//   'nome': 'Pedro Souza Gomes',
+//   'ano_nasc': 1972,
+//   'cpf': '111.111.111.11',
+//   'cargo': 'Analista de Sistemas'
+// };
 
-console.log(funcionario['nome']);
-console.log(funcionario.cpf);
+// console.log(funcionario['nome']);
+// console.log(funcionario.cpf);
 
-console.log('------------------------------')
+// console.log('------------------------------')
 
-var cursos = [
-  {
-    'titulo': 'Aprenda programação em Python 3 com facilidade do zero',
-    'avaliacoes': 680,
-    'alunos': 2300,
-    'categorias': ['programacao', 'tecnologia']
+// var cursos = [
+//   {
+//     'titulo': 'Aprenda programação em Python 3 com facilidade do zero',
+//     'avaliacoes': 680,
+//     'alunos': 2300,
+//     'categorias': ['programacao', 'tecnologia']
+//   },
+
+//   {
+//     'titulo': 'Aprenda PHP e faça sites dinâmicos',
+//     'avaliacoes': 180,
+//     'alunos': 350,
+//     'categorias': ['desenvolvimento web', 'programacao']
+//   },
+
+//   {
+//     'titulo': 'Excel do Zero ao Avançado',
+//     'avaliacoes': 420,
+//     'alunos': 1800,
+//     'categorias': ['produtividade', 'gestão']
+//   }
+
+// ];
+
+// console.log(cursos[1].categorias[0]);
+// cursos[2].categorias[1] = 'administração de empresas';
+// console.log(cursos);
+
+// Aula 14
+var aluno = {
+  'nome': 'Maria',
+  'sobrenome': 'Pereira',
+  'ano_nasc': 1992,
+  'ano_atual': 2018,
+  'nome_completo': function () {
+    var nomeCompleto = this.nome + ' ' + this.sobrenome;
+    return nomeCompleto;
   },
-
-  {
-    'titulo': 'Aprenda PHP e faça sites dinâmicos',
-    'avaliacoes': 180,
-    'alunos': 350,
-    'categorias': ['desenvolvimento web', 'programacao']
-  },
-
-  {
-    'titulo': 'Excel do Zero ao Avançado',
-    'avaliacoes': 420,
-    'alunos': 1800,
-    'categorias': ['produtividade', 'gestão']
-  }
-
-];
-
-console.log(cursos[1].categorias[0]);
-cursos[2].categorias[1] = 'administração de empresas';
-console.log(cursos);
+  'idade': function () {
+    var calculaIdade = this.ano_atual - this.ano_nasc;
+    return calculaIdade;
+  } //não é necessário incluir , par separação pois é o ultimo  elemento do objeto.
+}; // necessário o ; pois trata-se de um objeto aluno.
+// A chamada pelo metodo se faz como se fosse um atributo do objeto porem com a nomenclatura de função, inclui-se ().
+console.log(aluno.nome_completo());
+console.log(aluno.idade());
+console.log('--------------------------')
+// para ver os metodos de um objeto:
+console.log(console);
+// objeto.metodo.propriedade
+console.log(document.getElementById("tudo_obj").innerHTML);
