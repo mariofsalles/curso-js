@@ -43,7 +43,7 @@
 // var arredonda_baixo = Math.floor(4.6) // Arredondamento para baixo.
 // var raiz = Math.sqrt(36) // Raiz quadrada.
 
-// console.log('Arredoonda 2.7: ' + arredonda + 
+// console.log('Arredonda 2.7: ' + arredonda + 
 //             '\nArredoonda cima 4.3: '+ arredonda_cima + 
 //             '\nArredoonda baixo 4.6: '+ arredonda_baixo + 
 //             '\nRaiz 36: '+raiz);
@@ -242,21 +242,21 @@ console.log(teste);
 // console.log('--------------------------')
 
 // Aula 16
-document.getElementById("click-me").onclick = function () {
-  alert('Voce clicou no botão.');
-}
+// document.getElementById("click-me").onclick = function () {
+//   alert('Voce clicou no botão.');
+// }
 
-document.getElementById("hover-me").onmouseover = function () {
-  alert('Voce passou com o cursor no botão.');
-}
+// document.getElementById("hover-me").onmouseover = function () {
+//   alert('Voce passou com o cursor no botão.');
+// }
 
-document.getElementById("leave-me").onmouseout = function () {
-  alert('Voce saiu com o cursor do botão.');
-}
+// document.getElementById("leave-me").onmouseout = function () {
+//   alert('Voce saiu com o cursor do botão.');
+// }
 
-document.onkeydown = function () {
-  alert('Você pressionou uma tecla.' + event.keyCode); // Um evento nos permite usar o objeto event!
-}
+// document.onkeydown = function () {
+//   alert('Você pressionou uma tecla.' + event.keyCode); // Um evento nos permite usar o objeto event!
+// }
 
 // Outra maneira de se fazer com que a função seja executada, porem a função deve ser invocada no codigo HTML
 // diretamente no botão usando o atributo onclick que deverá possuir o nome da função
@@ -264,3 +264,12 @@ document.onkeydown = function () {
 // function buttonClicked () {
 //   alert('Você clicou no botão.');
 // }
+
+// Aula 17
+document.getElementById("botao_cor").onclick = function () {
+  // usado a notação entre colchetes ao invés do ponto e inserido entre aspas devido
+  // o hífen para o caso da propriedade background-color
+  this.style['background-color'] = "purple"; 
+  this.style.transform = "translateX(100px)";
+}
+
