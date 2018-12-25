@@ -220,25 +220,47 @@ console.log(teste);
 // console.log(cursos);
 
 // Aula 14
-var aluno = {
-  'nome': 'Maria',
-  'sobrenome': 'Pereira',
-  'ano_nasc': 1992,
-  'ano_atual': 2018,
-  'nome_completo': function () {
-    var nomeCompleto = this.nome + ' ' + this.sobrenome;
-    return nomeCompleto;
-  },
-  'idade': function () {
-    var calculaIdade = this.ano_atual - this.ano_nasc;
-    return calculaIdade;
-  } //não é necessário incluir , par separação pois é o ultimo  elemento do objeto.
-}; // necessário o ; pois trata-se de um objeto aluno.
-// A chamada pelo metodo se faz como se fosse um atributo do objeto porem com a nomenclatura de função, inclui-se ().
-console.log(aluno.nome_completo());
-console.log(aluno.idade());
-console.log('--------------------------')
-// para ver os metodos de um objeto:
-console.log(console);
-// objeto.metodo.propriedade
-console.log(document.getElementById("tudo_obj").innerHTML);
+// var aluno = {
+//   'nome': 'Maria',
+//   'sobrenome': 'Pereira',
+//   'ano_nasc': 1992,
+//   'ano_atual': 2018,
+//   'nome_completo': function () {
+//     var nomeCompleto = this.nome + ' ' + this.sobrenome;
+//     return nomeCompleto;
+//   },
+//   'idade': function () {
+//     var calculaIdade = this.ano_atual - this.ano_nasc;
+//     return calculaIdade;
+//   }
+// };
+// console.log(aluno.nome_completo());
+// console.log(aluno.idade());
+// console.log('--------------------------')
+// console.log(console);
+// console.log(document.getElementById("tudo_obj").innerHTML);
+// console.log('--------------------------')
+
+// Aula 16
+document.getElementById("click-me").onclick = function () {
+  alert('Voce clicou no botão.');
+}
+
+document.getElementById("hover-me").onmouseover = function () {
+  alert('Voce passou com o cursor no botão.');
+}
+
+document.getElementById("leave-me").onmouseout = function () {
+  alert('Voce saiu com o cursor do botão.');
+}
+
+document.onkeydown = function () {
+  alert('Você pressionou uma tecla.' + event.keyCode); // Um evento nos permite usar o objeto event!
+}
+
+// Outra maneira de se fazer com que a função seja executada, porem a função deve ser invocada no codigo HTML
+// diretamente no botão usando o atributo onclick que deverá possuir o nome da função
+// mas é legal que se separe o que é javascript de HTML
+// function buttonClicked () {
+//   alert('Você clicou no botão.');
+// }
