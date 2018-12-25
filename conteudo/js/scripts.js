@@ -145,36 +145,76 @@ console.log(teste);
 // var meu_imc = document.getElementById("imc").innerHTML
 // console.log(meu_imc);
 
-//Aula 12
-var alunos = ["João", "Maria", "José"];
-var num_primos = [2, 3, 5, 7, 11, 13];
-console.log(alunos.length);
-console.log(num_primos[2]);
-console.log(num_primos[10]);
-console.log('------------------------------')
-//Arrays multidimensionais
-var grupos = [
-  ["João", "Maria"],
-  ["Pedro", "Joana", "André", "Júlio"],
-  ["Carolina", "Helena", "Marcelo"]
-];
-console.log(grupos[1][1]);
-grupos[1][1] = "Marcela"; // troca o elemento por outro
-console.log(grupos[1][1]);
-console.log(grupos);
+// Aula 12
+// var alunos = ["João", "Maria", "José"];
+// var num_primos = [2, 3, 5, 7, 11, 13];
+// console.log(alunos.length);
+// console.log(num_primos[2]);
+// console.log(num_primos[10]);
+// console.log('------------------------------')
+// Arrays multidimensionais
+// var grupos = [
+//   ["João", "Maria"],
+//   ["Pedro", "Joana", "André", "Júlio"],
+//   ["Carolina", "Helena", "Marcelo"]
+// ];
+// console.log(grupos[1][1]);
+// grupos[1][1] = "Marcela"; // troca o elemento por outro
+// console.log(grupos[1][1]);
+// console.log(grupos);
+// console.log('------------------------------')
+// var cursos = ["HTML", "Python", "PHP"];
+// cursos.push("Javascript"); // insere no final do array
+// console.log(cursos); 
+// cursos.unshift("Bootstrap"); // insere no inicio do array
+// console.log(cursos);  
+// cursos.pop(); // remove no fim do array
+// console.log(cursos); 
+// cursos.shift(); // remove no inicio do array
+// console.log(cursos); 
+// console.log('------------------------------')
+// console.log(cursos.slice(0,2)); // o segundo parametro no slice não é contado, neste caso retorna-se os elementos 0, 1 e 2.
+// console.log('Convenção para numeros negativos');
+// console.log(cursos.slice(0,-1));
+// console.log(cursos.slice(-2,)); // neste caso irá pegar no penultimo(indicado pelo indice -2) até o ultimo.
+
+// Aula 13
+var funcionario = {
+  'nome': 'Pedro Souza Gomes',
+  'ano_nasc': 1972,
+  'cpf': '111.111.111.11',
+  'cargo': 'Analista de Sistemas'
+};
+
+console.log(funcionario['nome']);
+console.log(funcionario.cpf);
+
 console.log('------------------------------')
 
-var cursos = ["HTML", "Python", "PHP"];
-cursos.push("Javascript"); // insere no final do array
-console.log(cursos); 
-cursos.unshift("Bootstrap"); // insere no inicio do array
-console.log(cursos);  
-cursos.pop(); // remove no fim do array
-console.log(cursos); 
-cursos.shift(); // remove no inicio do array
-console.log(cursos); 
-console.log('------------------------------')
-console.log(cursos.slice(0,2)); // o segundo parametro no slice não é contado, neste caso retorna-se os elementos 0, 1 e 2.
-console.log('Convenção para numeros negativos');
-console.log(cursos.slice(0,-1));
-console.log(cursos.slice(-2,)); // neste caso irá pegar no penultimo(indicado pelo indice -2) até o ultimo.
+var cursos = [
+  {
+    'titulo': 'Aprenda programação em Python 3 com facilidade do zero',
+    'avaliacoes': 680,
+    'alunos': 2300,
+    'categorias': ['programacao', 'tecnologia']
+  },
+
+  {
+    'titulo': 'Aprenda PHP e faça sites dinâmicos',
+    'avaliacoes': 180,
+    'alunos': 350,
+    'categorias': ['desenvolvimento web', 'programacao']
+  },
+
+  {
+    'titulo': 'Excel do Zero ao Avançado',
+    'avaliacoes': 420,
+    'alunos': 1800,
+    'categorias': ['produtividade', 'gestão']
+  }
+
+];
+
+console.log(cursos[1].categorias[0]);
+cursos[2].categorias[1] = 'administração de empresas';
+console.log(cursos);
