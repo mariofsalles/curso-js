@@ -314,16 +314,44 @@ console.log(teste);
 //   }
 
 // Aula 20
-var count = 0;
-while (count < 5){
-  console.log(count);
-  count++
-}
-console.log('--------------')
-var count2 = 10;
+// var count = 0;
+// while (count < 5){
+//   console.log(count);
+//   count++
+// }
+// console.log('--------------')
+// var count2 = 10;
 // Irá executar o codigo pelo menos uma vez antes de testar o while
-do {
-  console.log(count2);
-  count2++;
+// do {
+//   console.log(count2);
+//   count2++;
+// }
+// while (count2 < 5);
+
+// Aula 21
+// var idade = 18;
+// if (idade < 18){
+//   console.log('Menor de idade');
+// }else if (idade == 18){
+//   console.log('Tem 18 anos')
+// } else {
+//   console.log('Maior de idade');
+// }
+var nota = 8;
+var faltas = 4;
+// if (nota >=7 && faltas <=4) { 
+//   console.log('Aluno aprovado')
+// } else {
+//   console.log('Aluno reprovado')
+// }
+// if (nota < 7 || faltas > 4) {
+//   console.log('Aluno aprovado')
+// } else {
+//   console.log('Aluno reprovado')
+// }
+var nome = 'Ivan';
+if (nome) {
+  console.log('Nome: ' + nome);
+} else{
+  console.log('Nome não informado');
 }
-while (count2 < 5);
