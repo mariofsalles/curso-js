@@ -522,28 +522,57 @@ console.log(teste);
 // }, 1000);
 
 //Aula 28
-function valor_pedagio (categoria) {
- switch(categoria){
-    case '1':
-      return 11.22;
-      break
+// function valor_pedagio (categoria) {
+//  switch(categoria){
+//     case '1':
+//       return 11.22;
+//       break
 
-    case '2':
-      return 16.88;
-      break
+//     case '2':
+//       return 16.88;
+//       break
 
-    case '3':
-      return 22.45;
-      break
+//     case '3':
+//       return 22.45;
+//       break
     
-    case '4':
-      return 33.65;
-      break
+//     case '4':
+//       return 33.65;
+//       break
 
-    default:
-      return 'categoria não encontrada';
+//     default:
+//       return 'categoria não encontrada';
+//   }
+// }
+
+// var categoria_veiculo = '3';
+// console.log('Valor a pagar: '+ valor_pedagio(categoria_veiculo));
+
+//Aula 29
+var x = 0;
+while (x < 10) {
+  console.log(x);
+  x++;
+  if (x == 5) {
+    break;
   }
 }
-
-var categoria_veiculo = '3';
-console.log('Valor a pagar: '+ valor_pedagio(categoria_veiculo));
+console.log('---------------------');
+var lista = [1,5,9,11,12,14,33,45,56,78,99,100,138,156,190];
+for (var num = 0; num < lista.length; num++){
+  if (lista[num]==33){
+    console.log('Valor encontrado');
+    break;
+  }
+  console.log('Tentativa: '+num);
+}
+console.log('---------------------');
+var num = 0;
+while (num < 20){
+  if (num == 7){
+    num++;
+    continue
+  }
+  console.log(num);
+  num++
+}
