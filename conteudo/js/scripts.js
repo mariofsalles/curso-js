@@ -414,31 +414,59 @@ console.log(teste);
 // console.log('---------------')
 // console.log(localStorage['nome']);
 
-document.getElementById('enviar-nome').onclick = function () {
-  var nome = document.getElementById('nome-usuario').value;
-  localStorage.setItem('nome', nome);
-  //esconde o formulario
-  document.getElementById('name-field').style.display = 'none';
-  //atualiza a mensagem de boas vindas
-  document.getElementById('welcome-text').innerHTML = 'Olá '+ localStorage.nome +', tudo bem?';
-  document.getElementById('not-me').innerHTML = 'Não é ' + localStorage.nome;
-  document.getElementById('welcome-area').style.display = 'initial';
-};
+// document.getElementById('enviar-nome').onclick = function () {
+//   var nome = document.getElementById('nome-usuario').value;
+//   localStorage.setItem('nome', nome);
+//   //esconde o formulario
+//   document.getElementById('name-field').style.display = 'none';
+//   //atualiza a mensagem de boas vindas
+//   document.getElementById('welcome-text').innerHTML = 'Olá '+ localStorage.nome +', tudo bem?';
+//   document.getElementById('not-me').innerHTML = 'Não é ' + localStorage.nome;
+//   document.getElementById('welcome-area').style.display = 'initial';
+// };
 
-if (localStorage.nome) {
-  //esconde o formulario
-  document.getElementById('name-field').style.display = 'none';
-  //atualiza a mensagem de boas vindas
-  document.getElementById('welcome-text').innerHTML = 'Olá ' + localStorage.nome + ', tudo bem?';
-  document.getElementById('not-me').innerHTML = 'Não é ' + localStorage.nome;
-  document.getElementById('welcome-area').style.display = 'initial';
-}
+// if (localStorage.nome) {
+//   //esconde o formulario
+//   document.getElementById('name-field').style.display = 'none';
+//   //atualiza a mensagem de boas vindas
+//   document.getElementById('welcome-text').innerHTML = 'Olá ' + localStorage.nome + ', tudo bem?';
+//   document.getElementById('not-me').innerHTML = 'Não é ' + localStorage.nome;
+//   document.getElementById('welcome-area').style.display = 'initial';
+// }
 
-document.getElementById('not-me').onclick = function () {
-  //remove a chave nome do localStorage
-  localStorage.removeItem('nome');
-  //esconde a mensagem de boas vindas
-  document.getElementById('welcome-area').style.display = 'none';
-  //Reexibe o input text e botao
-  document.getElementById('name-field').style.display = 'initial';
-}
+// document.getElementById('not-me').onclick = function () {
+//   //remove a chave nome do localStorage
+//   localStorage.removeItem('nome');
+//   //esconde a mensagem de boas vindas
+//   document.getElementById('welcome-area').style.display = 'none';
+//   //Reexibe o input text e botao
+//   document.getElementById('name-field').style.display = 'initial';
+// }
+
+//Aula 26
+// as datas podem possuir argumento
+var data_hoje = new Date(2016,0,10, 17,45,10); //cria hora especicica
+var data_hoje2 = new Date("2020-03-18"); //com string
+var data_hoje3 = new Date(); //com string
+
+console.log(data_hoje);
+console.log(data_hoje2);
+console.log(data_hoje3.getDate() + '/' + (data_hoje3.getMonth() + 1) + '/' + data_hoje3.getFullYear());
+console.log('-------------');
+var data_nascimento = '1980-03-01';
+var ano_nascimento = new Date(data_nascimento).getFullYear();
+var ano_atual = new Date().getFullYear();
+var idade = ano_atual - ano_nascimento;
+console.log(idade);
+console.log('-------------');
+// Epoch: 01 de Janeiro de 1970, 00:00:00 do fuso horário UTC
+var data = new Date();
+console.log('Passaram do Epoch até a data atual: '+data.getTime()+ 'ms');
+console.log('-------------');
+var data_atualizada = data / 31536000000;
+
+'dias_entrega'
+var data_envio = new Date('2018-03-20')
+var data_entrega = new Date('2018-04-06')
+var tempo_entrega = (data_entrega - data_envio) / 86400000;
+document.getElementById('dias_entrega').innerHTML = tempo_entrega;
