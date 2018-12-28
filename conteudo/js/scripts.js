@@ -401,8 +401,44 @@ console.log(teste);
 // }
 
 //Aula 24
-window.onmousemove = function(e) {
-if (e.pageY < 5 ){
-  alert('Não perca os descontos exclusivos promocionais');
+// window.onmousemove = function(e) {
+// if (e.pageY < 5 ){
+//   alert('Não perca os descontos exclusivos promocionais');
+// };
+// };
+
+//Aula 25
+// window.localStorage.setItem('nome','Joao'); //cria uma dupla chave valor, no caso nome: Joao
+// console.log(localStorage['nome']); // Irá imprimir o valor armazenado na chave
+// localStorage.removeItem('nome');
+// console.log('---------------')
+// console.log(localStorage['nome']);
+
+document.getElementById('enviar-nome').onclick = function () {
+  var nome = document.getElementById('nome-usuario').value;
+  localStorage.setItem('nome', nome);
+  //esconde o formulario
+  document.getElementById('name-field').style.display = 'none';
+  //atualiza a mensagem de boas vindas
+  document.getElementById('welcome-text').innerHTML = 'Olá '+ localStorage.nome +', tudo bem?';
+  document.getElementById('not-me').innerHTML = 'Não é ' + localStorage.nome;
+  document.getElementById('welcome-area').style.display = 'initial';
 };
-};
+
+if (localStorage.nome) {
+  //esconde o formulario
+  document.getElementById('name-field').style.display = 'none';
+  //atualiza a mensagem de boas vindas
+  document.getElementById('welcome-text').innerHTML = 'Olá ' + localStorage.nome + ', tudo bem?';
+  document.getElementById('not-me').innerHTML = 'Não é ' + localStorage.nome;
+  document.getElementById('welcome-area').style.display = 'initial';
+}
+
+document.getElementById('not-me').onclick = function () {
+  //remove a chave nome do localStorage
+  localStorage.removeItem('nome');
+  //esconde a mensagem de boas vindas
+  document.getElementById('welcome-area').style.display = 'none';
+  //Reexibe o input text e botao
+  document.getElementById('name-field').style.display = 'initial';
+}
