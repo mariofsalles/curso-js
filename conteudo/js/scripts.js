@@ -445,28 +445,78 @@ console.log(teste);
 
 //Aula 26
 // as datas podem possuir argumento
-var data_hoje = new Date(2016,0,10, 17,45,10); //cria hora especicica
-var data_hoje2 = new Date("2020-03-18"); //com string
-var data_hoje3 = new Date(); //com string
+// var data_hoje = new Date(2016,0,10, 17,45,10); //cria hora especicica
+// var data_hoje2 = new Date("2020-03-18"); //com string
+// var data_hoje3 = new Date(); //com string
 
-console.log(data_hoje);
-console.log(data_hoje2);
-console.log(data_hoje3.getDate() + '/' + (data_hoje3.getMonth() + 1) + '/' + data_hoje3.getFullYear());
-console.log('-------------');
-var data_nascimento = '1980-03-01';
-var ano_nascimento = new Date(data_nascimento).getFullYear();
-var ano_atual = new Date().getFullYear();
-var idade = ano_atual - ano_nascimento;
-console.log(idade);
-console.log('-------------');
-// Epoch: 01 de Janeiro de 1970, 00:00:00 do fuso horário UTC
-var data = new Date();
-console.log('Passaram do Epoch até a data atual: '+data.getTime()+ 'ms');
-console.log('-------------');
-var data_atualizada = data / 31536000000;
+// console.log(data_hoje);
+// console.log(data_hoje2);
+// console.log(data_hoje3.getDate() + '/' + (data_hoje3.getMonth() + 1) + '/' + data_hoje3.getFullYear());
+// console.log('-------------');
+// var data_nascimento = '1980-03-01';
+// var ano_nascimento = new Date(data_nascimento).getFullYear();
+// var ano_atual = new Date().getFullYear();
+// var idade = ano_atual - ano_nascimento;
+// console.log(idade);
+// console.log('-------------');
+// // Epoch: 01 de Janeiro de 1970, 00:00:00 do fuso horário UTC
+// var data = new Date();
+// console.log('Passaram do Epoch até a data atual: '+data.getTime()+ 'ms');
+// console.log('-------------');
+// var data_atualizada = data / 31536000000;
 
-'dias_entrega'
-var data_envio = new Date('2018-03-20')
-var data_entrega = new Date('2018-04-06')
-var tempo_entrega = (data_entrega - data_envio) / 86400000;
-document.getElementById('dias_entrega').innerHTML = tempo_entrega;
+// 'dias_entrega'
+// var data_envio = new Date('2018-03-20')
+// var data_entrega = new Date('2018-04-06')
+// var tempo_entrega = (data_entrega - data_envio) / 86400000;
+// document.getElementById('dias_entrega').innerHTML = tempo_entrega;
+
+// Aula 27
+// setTimeout
+// console.log('Mensagem 1');
+// window.setTimeout(function() {
+//   console.log ('Mensagem2');
+// },3000);
+
+
+// document.getElementById('mostrar-loader').onclick = function () {
+//   document.getElementById('spinner-loader').style.display = 'initial';
+//   window.setTimeout(function () {
+//     document.getElementById("spinner-loader").style.display = 'none';
+//   }, 5000);
+// };
+
+// var count = 0;
+// var counter = window.setInterval(function () {
+//   console.log(count);
+//   count++;
+//   if (count >= 10) {
+//     window.clearInterval(counter); // maneira de parar o contador
+//   }
+// }, 1000);
+
+//getHours()
+//getMinutes()
+//getSeconds()
+
+window.setInterval( function () {
+
+  var hora_atual = new Date();
+
+  var horas = hora_atual.getHours();
+  var minutos = hora_atual.getMinutes();
+  var segundos = hora_atual.getSeconds();
+
+  function formatTime(time){
+    if (time >= 0 && time <= 9){
+      var formatted_time = time.toString();
+      formatted_time = '0'+formatted_time;
+    } else {
+      var formatted_time = time.toString();
+    }
+    return formatted_time;
+  }
+  
+  document.getElementById('relogio').innerHTML = formatTime(horas) + ':' + formatTime(minutos) + ':' + formatTime(segundos);
+  
+}, 1000);
