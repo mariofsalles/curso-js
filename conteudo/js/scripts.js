@@ -549,30 +549,77 @@ console.log(teste);
 // console.log('Valor a pagar: '+ valor_pedagio(categoria_veiculo));
 
 //Aula 29
-var x = 0;
-while (x < 10) {
-  console.log(x);
-  x++;
-  if (x == 5) {
-    break;
+// var x = 0;
+// while (x < 10) {
+//   console.log(x);
+//   x++;
+//   if (x == 5) {
+//     break;
+//   }
+// }
+// console.log('---------------------');
+// var lista = [1,5,9,11,12,14,33,45,56,78,99,100,138,156,190];
+// for (var num = 0; num < lista.length; num++){
+//   if (lista[num]==33){
+//     console.log('Valor encontrado');
+//     break;
+//   }
+//   console.log('Tentativa: '+num);
+// }
+// console.log('---------------------');
+// var num = 0;
+// while (num < 20){
+//   if (num == 7){
+//     num++;
+//     continue
+//   }
+//   console.log(num);
+//   num++
+// }
+//Aula 30
+
+ // selectbox: assemelha-se a um array;
+document.getElementById('mostrar_opcao').onclick = function () {
+  var campo_select = document.getElementById('options');
+  var indice_selecionado = campo_select.options.selectedIndex;
+  var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+  document.getElementById('opcao_selecionada').innerHTML = valor_selecionado;
+  
+  var valor = document.getElementById('options').value;
+  document.getElementById('opcao_selecionada2').innerHTML = valor;
+};
+
+
+
+// radio buttons: inputs do tipo radio, seleciona-se por meio de loop
+document.getElementById("mostrar_radio").onclick = function () {
+  var radio = document.getElementsByName('genero');
+  var radio_selected;
+  for (var count = 0; count < radio.length; count++){
+    if (radio[count].checked){
+      radio_selected = radio[count].value;
+      break;
+    }
   }
+  document.getElementById('radio_selecionado').innerHTML=radio_selected;
 }
-console.log('---------------------');
-var lista = [1,5,9,11,12,14,33,45,56,78,99,100,138,156,190];
-for (var num = 0; num < lista.length; num++){
-  if (lista[num]==33){
-    console.log('Valor encontrado');
-    break;
+
+//checkbox
+document.getElementById("mostrar_check").onclick = function () {
+  document.getElementById('check_selecionado').innerHTML = ''; //para que antes de mais nada, check_selecionado, esteja vazia
+  var check = document.getElementsByName('interesse');
+  for (var count = 0; count < check.length; count++){
+    if (check[count].checked) {
+        document.getElementById('check_selecionado').innerHTML += '<li>'+check[count].value +'</li>';
+    }
   }
-  console.log('Tentativa: '+num);
-}
-console.log('---------------------');
-var num = 0;
-while (num < 20){
-  if (num == 7){
-    num++;
-    continue
-  }
-  console.log(num);
-  num++
+};
+
+// Date
+// input id = 'data_evento'
+// button id = 'mostrar_data' 
+document.getElementById('mostrar_data').onclick = function () {
+  var data_select = document.getElementById('data_evento').value;
+  var data_completa = new Date(data_select);
+  document.getElementById('data_selecionada').innerHTML = data_completa;
 }
