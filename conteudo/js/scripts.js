@@ -630,24 +630,30 @@ console.log(teste);
 
 // para o caso de select box o comportamento está vinculado a um elemento pai,
 //  portanto pode-se usar os indices (entes) dos mesmos como opção
-document.getElementById('escolaridade').onchange = function () {
-  var campo_select = document.getElementById('escolaridade');
-  var indice_selecionado = campo_select.options.selectedIndex;
-  var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
-  document.getElementById('escolaridade_selecionada').innerHTML = valor_selecionado;
-};
+// document.getElementById('escolaridade').onchange = function () {
+//   var campo_select = document.getElementById('escolaridade');
+//   var indice_selecionado = campo_select.options.selectedIndex;
+//   var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+//   document.getElementById('escolaridade_selecionada').innerHTML = valor_selecionado;
+// };
 
 // no checkbox os elementos estão separados em inputs diferentes, dessa forma deve-se trata-los como um vetor
 // e realizar uma varredura por meio de um for
-var check = document.getElementsByName("lanche");
-for (var contador = 0; contador < check.length; contador++) {
+// var check = document.getElementsByName("lanche");
+// for (var contador = 0; contador < check.length; contador++) {
   // necessário criar um evento onchange para cada item selecionado no checkbox
-  check[contador].onchange = function () {
-    document.getElementById("check_selecionado").innerHTML = "";
-    for (var contador2 = 0; contador2 < check.length; contador2++) {
-      if (check[contador2].checked) {
-        document.getElementById("check_selecionado").innerHTML += '<li>' + check[contador2].value + '</li>';
-      }
-    }
-  }
-}
+//   check[contador].onchange = function () {
+//     document.getElementById("check_selecionado").innerHTML = "";
+//     for (var contador2 = 0; contador2 < check.length; contador2++) {
+//       if (check[contador2].checked) {
+//         document.getElementById("check_selecionado").innerHTML += '<li>' + check[contador2].value + '</li>';
+//       }
+//     }
+//   }
+// }
+
+// ------JQuery---------
+
+//Aula 33
+
+// JavaScript puro -> Vamilla JS
