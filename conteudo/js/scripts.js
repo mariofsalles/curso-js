@@ -579,47 +579,75 @@ console.log(teste);
 //Aula 30
 
  // selectbox: assemelha-se a um array;
-document.getElementById('mostrar_opcao').onclick = function () {
-  var campo_select = document.getElementById('options');
-  var indice_selecionado = campo_select.options.selectedIndex;
-  var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
-  document.getElementById('opcao_selecionada').innerHTML = valor_selecionado;
+// document.getElementById('mostrar_opcao').onclick = function () {
+//   var campo_select = document.getElementById('options');
+//   var indice_selecionado = campo_select.options.selectedIndex;
+//   var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+//   document.getElementById('opcao_selecionada').innerHTML = valor_selecionado;
   
-  var valor = document.getElementById('options').value;
-  document.getElementById('opcao_selecionada2').innerHTML = valor;
-};
+//   var valor = document.getElementById('options').value;
+//   document.getElementById('opcao_selecionada2').innerHTML = valor;
+// };
 
 
 
 // radio buttons: inputs do tipo radio, seleciona-se por meio de loop
-document.getElementById("mostrar_radio").onclick = function () {
-  var radio = document.getElementsByName('genero');
-  var radio_selected;
-  for (var count = 0; count < radio.length; count++){
-    if (radio[count].checked){
-      radio_selected = radio[count].value;
-      break;
-    }
-  }
-  document.getElementById('radio_selecionado').innerHTML=radio_selected;
-}
+// document.getElementById("mostrar_radio").onclick = function () {
+//   var radio = document.getElementsByName('genero');
+//   var radio_selected;
+//   for (var count = 0; count < radio.length; count++){
+//     if (radio[count].checked){
+//       radio_selected = radio[count].value;
+//       break;
+//     }
+//   }
+//   document.getElementById('radio_selecionado').innerHTML=radio_selected;
+// }
 
 //checkbox
-document.getElementById("mostrar_check").onclick = function () {
-  document.getElementById('check_selecionado').innerHTML = ''; //para que antes de mais nada, check_selecionado, esteja vazia
-  var check = document.getElementsByName('interesse');
-  for (var count = 0; count < check.length; count++){
-    if (check[count].checked) {
-        document.getElementById('check_selecionado').innerHTML += '<li>'+check[count].value +'</li>';
-    }
-  }
-};
+// document.getElementById("mostrar_check").onclick = function () {
+//   document.getElementById('check_selecionado').innerHTML = ''; //para que antes de mais nada, check_selecionado, esteja vazia
+//   var check = document.getElementsByName('interesse');
+//   for (var count = 0; count < check.length; count++){
+//     if (check[count].checked) {
+//         document.getElementById('check_selecionado').innerHTML += '<li>'+check[count].value +'</li>';
+//     }
+//   }
+// };
 
 // Date
 // input id = 'data_evento'
 // button id = 'mostrar_data' 
-document.getElementById('mostrar_data').onclick = function () {
-  var data_select = document.getElementById('data_evento').value;
-  var data_completa = new Date(data_select);
-  document.getElementById('data_selecionada').innerHTML = data_completa;
+// document.getElementById('mostrar_data').onclick = function () {
+//   var data_select = document.getElementById('data_evento').value;
+//   var data_completa = new Date(data_select);
+//   document.getElementById('data_selecionada').innerHTML = data_completa;
+// }
+
+//Aula 31
+// evento onchange: ao se inserir valor num input text esse valor atualiza automaticamente 
+// um campo especifico da pagina
+
+// para o caso de select box o comportamento está vinculado a um elemento pai,
+//  portanto pode-se usar os indices (entes) dos mesmos como opção
+document.getElementById('escolaridade').onchange = function () {
+  var campo_select = document.getElementById('escolaridade');
+  var indice_selecionado = campo_select.options.selectedIndex;
+  var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+  document.getElementById('escolaridade_selecionada').innerHTML = valor_selecionado;
+};
+
+// no checkbox os elementos estão separados em inputs diferentes, dessa forma deve-se trata-los como um vetor
+// e realizar uma varredura por meio de um for
+var check = document.getElementsByName("lanche");
+for (var contador = 0; contador < check.length; contador++) {
+  // necessário criar um evento onchange para cada item selecionado no checkbox
+  check[contador].onchange = function () {
+    document.getElementById("check_selecionado").innerHTML = "";
+    for (var contador2 = 0; contador2 < check.length; contador2++) {
+      if (check[contador2].checked) {
+        document.getElementById("check_selecionado").innerHTML += '<li>' + check[contador2].value + '</li>';
+      }
+    }
+  }
 }
