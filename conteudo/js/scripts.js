@@ -668,29 +668,50 @@ console.log(teste);
 // });
 
 // Aula 35
-var conteudo_html = $('#paragrafo-html').html(); // JQuery é um bib do JS, permitindo mesclagem entre as sintaxes
-console.log(conteudo_html);
-console.log('----------------------')
-var conteudo_html = $('#paragrafo-html').text(); // JQuery é um bib do JS, permitindo mesclagem entre as sintaxes
-console.log(conteudo_html);
-console.log('----------------------')
-$('#paragrafo-html').html('Mudar conteúdo do parágrafo');
-conteudo_html = $('#paragrafo-html').html(); // mostrou na pagina
-console.log(conteudo_html); // mostrou no console
-console.log('----------------------')
-var url_link = $('#paragrafo-link').attr('href');
-console.log(url_link);
-console.log('----------------------')
-$('#paragrafo-link').attr('href', 'http://www.udemy.com'); // muda o atributo do href para o endereço que está no 2o campo
-var url_link = $('#paragrafo-link').attr('href'); // pega o href que esta no elemento de id: paragrafo-link
-console.log(url_link);
-console.log('----------------------')
-$('#mudar_imagem').click(function () {
-  $('#imagem_js').attr('src', 'https://cdn.tutsplus.com/net/uploads/2013/12/managing-async-nodejs-retina-preview.png');
-  $('#mudar_imagem').hide()
+// var conteudo_html = $('#paragrafo-html').html(); // JQuery é um bib do JS, permitindo mesclagem entre as sintaxes
+// console.log(conteudo_html);
+// console.log('----------------------')
+// var conteudo_html = $('#paragrafo-html').text(); // JQuery é um bib do JS, permitindo mesclagem entre as sintaxes
+// console.log(conteudo_html);
+// console.log('----------------------')
+// $('#paragrafo-html').html('Mudar conteúdo do parágrafo');
+// conteudo_html = $('#paragrafo-html').html(); // mostrou na pagina
+// console.log(conteudo_html); // mostrou no console
+// console.log('----------------------')
+// var url_link = $('#paragrafo-link').attr('href');
+// console.log(url_link);
+// console.log('----------------------')
+// $('#paragrafo-link').attr('href', 'http://www.udemy.com'); // muda o atributo do href para o endereço que está no 2o campo
+// var url_link = $('#paragrafo-link').attr('href'); // pega o href que esta no elemento de id: paragrafo-link
+// console.log(url_link);
+// console.log('----------------------')
+// $('#mudar_imagem').click(function () {
+//   $('#imagem_js').attr('src', 'https://cdn.tutsplus.com/net/uploads/2013/12/managing-async-nodejs-retina-preview.png');
+//   $('#mudar_imagem').hide()
+// });
+// console.log('----------------------')
+// $('#paragrafo-empty').html('');
+// -->Equivalencias:
+// $('#paragrafo-empty').empty();
+// $('#pragrafo-empty').remove();
+var lista = ["HTML", "CSS", "Javascript", "jQuery", "PHP"];
+$.each(lista, function (index, value) {
+  console.log('O elemento de indice ['+index+'] possui valor: '+value)
+   });
+console.log('--------------');
+var pessoa = {
+  'nome': 'João Pedro',
+  'DN': '20/01/1990',
+  'CPF': '111.111.111-11'
+};
+$.each(pessoa, function (chave, valor) {
+  console.log('O elemento de chave [' + chave + '] tem o valor de ' + valor);
 });
-console.log('----------------------')
-$('#paragrafo-empty').html('');
-//equivalencias:
-$('#paragrafo-empty').empty();
-$('#pragrafo-empty').remove();
+
+console.log('-------------');
+var interesses = $("#interesses li"); // observar que possuir a mesma sintaxe do CSS
+$.each(interesses, function (chave1, valor1) {
+  console.log($(valor1).text());
+});
+
+
