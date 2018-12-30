@@ -694,6 +694,8 @@ console.log(teste);
 // -->Equivalencias:
 // $('#paragrafo-empty').empty();
 // $('#pragrafo-empty').remove();
+
+// Aula 36
 // var lista = ["HTML", "CSS", "Javascript", "jQuery", "PHP"];
 // $.each(lista, function (index, value) {
 //   console.log('O elemento de indice ['+index+'] possui valor: '+value)
@@ -714,27 +716,43 @@ console.log(teste);
 //   console.log($(valor1).text());
 // });
 
-var conteudo_input = $('#campo_nome').val();
-console.log(conteudo_input);
-console.log('--------------------------------');
+// Aula 37
+// var conteudo_input = $('#campo_nome').val();
+// console.log(conteudo_input);
 
-$("#options").change(function () {
-  var novo_selecionado = $('#options').find(":selected").text();
-  console.log(novo_selecionado);
-  console.log('--------------------------------');
-});
+// $("#options").change(function () {
+//   var novo_selecionado = $('#options').find(":selected").text();
+//   console.log('--------------------------------');
+//   console.log(novo_selecionado);
+// });
 
-$("input[name='genero']").change(function () {
-  var radio_select = $("input[name='genero']:checked").parent('span').text();
-  console.log(radio_select);
-});
-console.log('--------------------------------');
+// $("input[name='genero']").change(function () {
+//   var radio_select = $("input[name='genero']:checked").parent('span').text();
+//   console.log('--------------------------------');
+//   console.log(radio_select);
+// });
 
-$("input[name='interesse']").change(function () {
-  var checkboxes_selecionados = $("input[name='interesse']:checked");
-  var textos = [];
-  $.each(checkboxes_selecionados, function (index, value) {
-    textos.push($(value).parent("span").text());
+// $("input[name='interesse']").change(function () {
+//   var checkboxes_selecionados = $("input[name='interesse']:checked");
+//   var textos = [];
+//   $.each(checkboxes_selecionados, function (index, value) {
+//     textos.push($(value).parent("span").text());
+//   });
+//   console.log('--------------------------------');
+//   console.log(textos);
+// });
+
+// Aula 38
+//  addClass(), removeClass(), toggleClass()
+
+$('#adicionar_classe').click(function () { 
+  $('#paragrafo-classes').addClass('styling');
   });
-  console.log(textos);
+
+$('#remover_classe').click(function () {
+  $('#paragrafo-classes').removeClass('styling');
+});
+
+$('#alternar_classe').click(function () {
+$('#paragrafo-classes').toggleClass('styling');  
 });
