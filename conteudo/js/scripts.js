@@ -775,22 +775,35 @@ console.log(teste);
 // Aula 40
 //id=
 //id='texto-escondido'
-  $('#botao-esconder').click(function () { 
-    $(this).hide(600, function () {
-      $('#texto-escondido').show(600);
-    });
-  });
+  // $('#botao-esconder').click(function () { 
+  //   $(this).hide(600, function () {
+  //     $('#texto-escondido').show(600);
+  //   });
+  // });
 
- id='tab-title'
- id='toggle-tab'
- id='tab-content'
 
-  $('#toggle-tab').click(function () {
-    $('#tab-content').slideToggle(); // neste caso o deslizamento é de 400ms, pode-se defeinir 
+  // $('#toggle-tab').click(function () {
+  //   $('#tab-content').slideToggle(); // neste caso o deslizamento é de 400ms, pode-se defeinir 
     //como string slow(600ms) ou fast(200ms)
-    $('#toggle-tab').toggleClass('flip'); // criada uma classe flip que gira 180 graus a seta de visualização
+//     $('#toggle-tab').toggleClass('flip'); // criada uma classe flip que gira 180 graus a seta de visualização
   
+// });
+
+// Aula 41
+// dispensa callback
+// não é possivel animar cores
+// propriedade css com hífen deve ser escrita no padrão camel case
+$('#animar').click(function () { 
+  $('#quadrado').animate({
+    width: '+=20px',
+    height: '+=20px'
+  }, 1000);
+    $('#quadrado').animate({
+    height: '+=20px'
+  }, 1000);
 });
+
+// Aula 42
 
 
 
