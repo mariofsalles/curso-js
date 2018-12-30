@@ -694,24 +694,47 @@ console.log(teste);
 // -->Equivalencias:
 // $('#paragrafo-empty').empty();
 // $('#pragrafo-empty').remove();
-var lista = ["HTML", "CSS", "Javascript", "jQuery", "PHP"];
-$.each(lista, function (index, value) {
-  console.log('O elemento de indice ['+index+'] possui valor: '+value)
-   });
-console.log('--------------');
-var pessoa = {
-  'nome': 'João Pedro',
-  'DN': '20/01/1990',
-  'CPF': '111.111.111-11'
-};
-$.each(pessoa, function (chave, valor) {
-  console.log('O elemento de chave [' + chave + '] tem o valor de ' + valor);
+// var lista = ["HTML", "CSS", "Javascript", "jQuery", "PHP"];
+// $.each(lista, function (index, value) {
+//   console.log('O elemento de indice ['+index+'] possui valor: '+value)
+//    });
+// console.log('--------------');
+// var pessoa = {
+//   'nome': 'João Pedro',
+//   'DN': '20/01/1990',
+//   'CPF': '111.111.111-11'
+// };
+// $.each(pessoa, function (chave, valor) {
+//   console.log('O elemento de chave [' + chave + '] tem o valor de ' + valor);
+// });
+
+// console.log('-------------');
+// var interesses = $("#interesses li"); // observar que possuir a mesma sintaxe do CSS
+// $.each(interesses, function (chave1, valor1) {
+//   console.log($(valor1).text());
+// });
+
+var conteudo_input = $('#campo_nome').val();
+console.log(conteudo_input);
+console.log('--------------------------------');
+
+$("#options").change(function () {
+  var novo_selecionado = $('#options').find(":selected").text();
+  console.log(novo_selecionado);
+  console.log('--------------------------------');
 });
 
-console.log('-------------');
-var interesses = $("#interesses li"); // observar que possuir a mesma sintaxe do CSS
-$.each(interesses, function (chave1, valor1) {
-  console.log($(valor1).text());
+$("input[name='genero']").change(function () {
+  var radio_select = $("input[name='genero']:checked").parent('span').text();
+  console.log(radio_select);
 });
+console.log('--------------------------------');
 
-
+$("input[name='interesse']").change(function () {
+  var checkboxes_selecionados = $("input[name='interesse']:checked");
+  var textos = [];
+  $.each(checkboxes_selecionados, function (index, value) {
+    textos.push($(value).parent("span").text());
+  });
+  console.log(textos);
+});
