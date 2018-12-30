@@ -655,5 +655,14 @@ console.log(teste);
 // ------JQuery---------
 
 //Aula 33
+// JavaScript puro  ou Vanilla JS
 
-// JavaScript puro -> Vamilla JS
+// em JS puro
+// document.getElementById('exemplo').innerHTML = 'Olá';
+// em JQuery
+// $('#exemplo').html('Olá'); // segue a mesma terminologia do css: .(classe), #(id), etc.
+
+$('#esconder').click(function(){
+ // $('.exemplo').css('display', 'none'); //(propriedade, valor) - opcao1
+  $('.exemplo').hide(); //(propriedade, valor) - opcao2
+});
