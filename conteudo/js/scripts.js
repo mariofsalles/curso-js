@@ -1,3 +1,8 @@
+// $(document).ready(function () { 
+// ou:
+$(function () {
+  
+
 // Aula 01
 // alert("Mensagem enviada pelo Alert");
 // console.log("Mensagem envida pelo console");
@@ -745,14 +750,33 @@ console.log(teste);
 // Aula 38
 //  addClass(), removeClass(), toggleClass()
 
-$('#adicionar_classe').click(function () { 
-  $('#paragrafo-classes').addClass('styling');
-  });
+// $('#adicionar_classe').click(function () { 
+//   $('#paragrafo-classes').addClass('styling');
+//   });
 
-$('#remover_classe').click(function () {
-  $('#paragrafo-classes').removeClass('styling');
+// $('#remover_classe').click(function () {
+//   $('#paragrafo-classes').removeClass('styling');
+// });
+
+// $('#alternar_classe').click(function () {
+// $('#paragrafo-classes').toggleClass('styling');  
+// });
+
+// Aula 39
+
+$('#nome').keyup(function () { 
+  var conteudo = $('#nome').val();
+  if (conteudo) {
+    $('#confirmar').css('display', 'initial');
+  } else {
+    $('#confirmar').css('display', 'none');
+
+  }
+  
 });
 
-$('#alternar_classe').click(function () {
-$('#paragrafo-classes').toggleClass('styling');  
+
+
+
+
 });
