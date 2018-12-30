@@ -654,7 +654,7 @@ console.log(teste);
 
 // ------JQuery---------
 
-//Aula 33
+//Aula 34
 // JavaScript puro  ou Vanilla JS
 
 // em JS puro
@@ -662,7 +662,35 @@ console.log(teste);
 // em JQuery
 // $('#exemplo').html('Olá'); // segue a mesma terminologia do css: .(classe), #(id), etc.
 
-$('#esconder').click(function(){
- // $('.exemplo').css('display', 'none'); //(propriedade, valor) - opcao1
-  $('.exemplo').hide(); //(propriedade, valor) - opcao2
+// $('#esconder').click(function(){
+// $('.exemplo').css('display', 'none'); //(propriedade, valor) - opcao1
+// $('.exemplo').hide(); //(propriedade, valor) - opcao2
+// });
+
+// Aula 35
+var conteudo_html = $('#paragrafo-html').html(); // JQuery é um bib do JS, permitindo mesclagem entre as sintaxes
+console.log(conteudo_html);
+console.log('----------------------')
+var conteudo_html = $('#paragrafo-html').text(); // JQuery é um bib do JS, permitindo mesclagem entre as sintaxes
+console.log(conteudo_html);
+console.log('----------------------')
+$('#paragrafo-html').html('Mudar conteúdo do parágrafo');
+conteudo_html = $('#paragrafo-html').html(); // mostrou na pagina
+console.log(conteudo_html); // mostrou no console
+console.log('----------------------')
+var url_link = $('#paragrafo-link').attr('href');
+console.log(url_link);
+console.log('----------------------')
+$('#paragrafo-link').attr('href', 'http://www.udemy.com'); // muda o atributo do href para o endereço que está no 2o campo
+var url_link = $('#paragrafo-link').attr('href'); // pega o href que esta no elemento de id: paragrafo-link
+console.log(url_link);
+console.log('----------------------')
+$('#mudar_imagem').click(function () {
+  $('#imagem_js').attr('src', 'https://cdn.tutsplus.com/net/uploads/2013/12/managing-async-nodejs-retina-preview.png');
+  $('#mudar_imagem').hide()
 });
+console.log('----------------------')
+$('#paragrafo-empty').html('');
+//equivalencias:
+$('#paragrafo-empty').empty();
+$('#pragrafo-empty').remove();
