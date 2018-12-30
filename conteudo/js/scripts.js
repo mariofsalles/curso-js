@@ -763,17 +763,38 @@ console.log(teste);
 // });
 
 // Aula 39
+// $('#nome').keyup(function () { 
+//   var conteudo = $('#nome').val();
+//   if (conteudo) {
+//     $('#confirmar').css('display', 'initial');
+//   } else {
+//     $('#confirmar').css('display', 'none');
+//   }
+// });
 
-$('#nome').keyup(function () { 
-  var conteudo = $('#nome').val();
-  if (conteudo) {
-    $('#confirmar').css('display', 'initial');
-  } else {
-    $('#confirmar').css('display', 'none');
+// Aula 40
+//id=
+//id='texto-escondido'
+  $('#botao-esconder').click(function () { 
+    $(this).hide(600, function () {
+      $('#texto-escondido').show(600);
+    });
+  });
 
-  }
+ id='tab-title'
+ id='toggle-tab'
+ id='tab-content'
+
+  $('#toggle-tab').click(function () {
+    $('#tab-content').slideToggle(); // neste caso o deslizamento é de 400ms, pode-se defeinir 
+    //como string slow(600ms) ou fast(200ms)
+    $('#toggle-tab').toggleClass('flip'); // criada uma classe flip que gira 180 graus a seta de visualização
   
 });
+
+
+
+
 
 
 
