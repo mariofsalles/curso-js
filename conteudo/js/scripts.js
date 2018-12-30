@@ -793,17 +793,29 @@ console.log(teste);
 // dispensa callback
 // não é possivel animar cores
 // propriedade css com hífen deve ser escrita no padrão camel case
-$('#animar').click(function () { 
-  $('#quadrado').animate({
-    width: '+=20px',
-    height: '+=20px'
-  }, 1000);
-    $('#quadrado').animate({
-    height: '+=20px'
-  }, 1000);
-});
+// $('#animar').click(function () { 
+//   $('#quadrado').animate({
+//     width: '+=20px',
+//     height: '+=20px'
+//   }, 1000);
+//     $('#quadrado').animate({
+//     height: '+=20px'
+//   }, 1000);
+// });
 
 // Aula 42
+  $("#animar").click(function () {
+
+    $("#quadrado").animate({
+      width: '+=20px'
+    }, 500).animate({
+      height: '+=20px'
+    }, 500, function () {
+      $("#quadrado").css('background-color', 'green') // colocado sobre uma função callback pois o color não respeita metodo animate
+    });
+
+  });
+
 
 
 
