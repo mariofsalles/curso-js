@@ -831,21 +831,42 @@ console.log(teste);
   }
 
   // insere-se o comando try:
-  var user = {'nome':''};
-  try {
-    if (user.nome == ''){
-      throw 'Nome em branco'
-    }
-    saudar_usuario(user);
-  } catch (err){
-    console.log(err);
-  } 
+  // var user = {'nome':''};
+  // try {
+  //   if (user.nome == ''){
+  //     throw 'Nome em branco'
+  //   }
+  //   saudar_usuario(user);
+  // } catch (err){
+  //   console.log(err);
+  // } 
   // finally {
   //   console.log('Este comando será sempre executado');
   // }
 
+// Aula 45
 
+  var nome = "";
+  if (nome) {
+    var mensagem = "Olá " + nome;
+  } else {
+    var mensagem = "Nome não informado.";
+  }
+  console.log(mensagem);
+  console.log('-------------------')
+  var mensagem;
+  var nome = 'Miguel.';
+  nome ? mensagem = 'Olá ' + nome : mensagem = "Nome não informado.";
+  // mensagem = nome?'Olá '+nome:'Nome não informado.';
+  console.log(mensagem);
+  console.log('-------------------')
 
+  var mensagem1, idade, nome1;
+  mensagem1 = (nome1&&idade)?'Olá '+nome1+', você tem '+idade+' anos.'
+    : (!nome1 && !idade)? 'Nome e idade não informado'
+    : (!idade)? 'Idade não informada'
+    : 'Nome não informado.';
+  console.log(mensagem1);
 
 
 
