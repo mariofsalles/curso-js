@@ -906,33 +906,56 @@ console.log(teste);
   // meuWebApp.ver_nome();
 
   //////// por meio de funções
-  var meuWebApp = (function () { 
-    var nome = 'Maicon';
-    return{
-      'ver_nome': function () {
-        return console.log(nome);
-      },
-      'mudar_nome': function (novo_nome) {
-        nome = novo_nome;
-      },
-      'apagar_nome': function (){
-        nome = null;
-      }
-    };
-  })();
+  // var meuWebApp = (function () { 
+  //   var nome = 'Maicon';
+  //   return{
+  //     'ver_nome': function () {
+  //       return console.log(nome);
+  //     },
+  //     'mudar_nome': function (novo_nome) {
+  //       nome = novo_nome;
+  //     },
+  //     'apagar_nome': function (){
+  //       nome = null;
+  //     }
+  //   };
+  // })();
 
-  meuWebApp.mudar_nome('Joseph');
-  meuWebApp.ver_nome();
+  // meuWebApp.mudar_nome('Joseph');
+  // meuWebApp.ver_nome();
+  // console.log('-----------------');
+  // meuWebApp.mudar_nome('Marcos');
+  // meuWebApp.ver_nome();
+  // console.log('-----------------');
+  // meuWebApp.mudar_nome('Marcos');
+  // meuWebApp.apagar_nome();
+  // meuWebApp.ver_nome();
+
+// Aula 47
+// json: formato de armazanamento e transferencia 
+
+  var funcionario = {
+    'nome': "Fernanda Costa",
+    'd_nascimento': '1988-10-01',
+    'CPF': '111.111.111-11'
+  };
+
+  var funcionario_json = JSON.stringify(funcionario);
+  console.log(funcionario_json); // -> é um string
+  var funcionario_obj = JSON.parse(funcionario_json);
+  console.log(funcionario_obj); 
   console.log('-----------------');
-  meuWebApp.mudar_nome('Marcos');
-  meuWebApp.ver_nome();
+  var grupo_A = ['Real Madrid', 'Porto', 'Liverpool', 'Manchester United'];
+  console.log(JSON.stringify(grupo_A));
+  console.log(typeof JSON.stringify(grupo_A)); // O console mostrará "string"
   console.log('-----------------');
-  meuWebApp.mudar_nome('Marcos');
-  meuWebApp.apagar_nome();
-  meuWebApp.ver_nome();
 
-  
 
+  var info_temp = '{ "coord": { "lon": 145.77, "lat": -16.92 }, "weather": [{ "id": 802, "main": "Clouds", "description": "scattered clouds", "icon": "03n" }], "base": "stations", "main": { "temp": 300.15, "pressure": 1007, "humidity": 74, "temp_min": 300.15, "temp_max": 300.15 }, "visibility": 10000, "wind": { "speed": 3.6, "deg": 160 }, "clouds": { "all": 40 }, "dt": 1485790200, "sys": { "type": 1, "id": 8166, "message": 0.2064, "country": "AU", "sunrise": 1485720272, "sunset": 1485766550 }, "id": 2172797, "name": "Cairns", "cod": 200 }';
+  var info = JSON.parse(info_temp);
+  console.log(info);
+  console.log('-----------------');
+  console.log('A umidade é de ' +info.main.humidity+'%');
 
 
 
