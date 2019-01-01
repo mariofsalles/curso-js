@@ -869,14 +869,14 @@ console.log(teste);
   // console.log(mensagem1);
 
 // Aula 46
-  var nome;
-  function criar_nome() {
-    nome = 'Maria';
-    console.log(nome); // O console mostrará 'Maria'
-  }
-  criar_nome();
-  console.log(nome); // Este comando gerará um erro, 
-  console.log('-------------------');
+ //var nome;
+ //function criar_nome() {
+ //  nome = 'Maria';
+ //   console.log(nome); // O console mostrará 'Maria'
+ // }
+  //criar_nome();
+  //console.log(nome); // Este comando gerará um erro, 
+  //console.log('-------------------');
 
   // var x = 0;
   // if (x==0){
@@ -885,15 +885,53 @@ console.log(teste);
   // console.log(nome1);
   //console.log('-------------------');
 
-  for (let a =0; a <5; a++){ // a declaração por meio de let auxilia em criar variaveis 
+  //for (let a =0; a <5; a++){ // a declaração por meio de let auxilia em criar variaveis 
     // a ser executadas somente dentro do bloco
-    console.log(a);
-  }
+ //   console.log(a);
+ // }
 
-  const PI = 3.14; // não pode ser alterada;
+  //const PI = 3.14; // não pode ser alterada;
 
+  // Aula 47
+  // o namespace é realizado por meio de simulacao de escopos
 
+  /////// por meio de objetos:
+  // var meuWebApp = {
+  //   'nome' :'Miguel',
+    // 'ver_nome' : function () {
+    //   console.log(meuWebApp.nome);
+    // }
+  // };
+ 
+  // meuWebApp.ver_nome();
 
+  //////// por meio de funções
+  var meuWebApp = (function () { 
+    var nome = 'Maicon';
+    return{
+      'ver_nome': function () {
+        return console.log(nome);
+      },
+      'mudar_nome': function (novo_nome) {
+        nome = novo_nome;
+      },
+      'apagar_nome': function (){
+        nome = null;
+      }
+    };
+  })();
+
+  meuWebApp.mudar_nome('Joseph');
+  meuWebApp.ver_nome();
+  console.log('-----------------');
+  meuWebApp.mudar_nome('Marcos');
+  meuWebApp.ver_nome();
+  console.log('-----------------');
+  meuWebApp.mudar_nome('Marcos');
+  meuWebApp.apagar_nome();
+  meuWebApp.ver_nome();
+
+  
 
 
 
