@@ -998,19 +998,29 @@ console.log(teste);
 
   // tempo_londres(mostrar_dados);
 
-  // Aula 52
-  $.ajax({
-    type: 'GET',
-    url: 'https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22',
-    //data: '',
-    dataType: 'json',
-    success: function (data) {
-      console.log(data.main.temp);
-    },
-    error: function () {
-      console.log('erro na requisição');
-    }
-  });
+  // Aula 52 e 53
+
+  function pegar_dados (callback) {
+    $.ajax({
+      type: 'GET',
+      url: 'https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22',
+      //data: '',
+      dataType: 'json',
+    }).done(function (data) {
+        callback(data);
+    }).fail(function () {
+        console.log('erro na requisição');
+    });
+  }
+  
+  function apresentar_dados(data) {
+    $('#temp_atual').html(data.main.temp);
+    $('#temp_max').html(data.main.temp_max);
+    $('#temp_min').html(data.main.temp_min);
+  }
+
+  pegar_dados(apresentar_dados);
+  
 
 
 
