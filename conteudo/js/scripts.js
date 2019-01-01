@@ -972,31 +972,45 @@ console.log(teste);
   // xhttp.send();
 
 // Aula 51
-  function mostrar_temperatura(dados){
-    var dados_obj = JSON.parse(dados);
-    console.log('Temperatura de Londres ' + dados_obj.main.temp + ' Celsius.');
-  }
+  // function mostrar_temperatura(dados){
+  //   var dados_obj = JSON.parse(dados);
+  //   console.log('Temperatura de Londres ' + dados_obj.main.temp + ' Celsius.');
+  // }
 
-  function mostrar_dados(dados) {
-    var dados_obj = JSON.parse(dados);
-    console.log(dados_obj);
-  }
+  // function mostrar_dados(dados) {
+  //   var dados_obj = JSON.parse(dados);
+  //   console.log(dados_obj);
+  // }
 
-  function tempo_londres(callback) {
-    var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+  // function tempo_londres(callback) {
+  //   var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        callback(this.responseText); // devido a assincronicidade utiliza-se uma função callback
+  //   xhttp.onreadystatechange = function () {
+  //     if (this.readyState == 4 && this.status == 200) {
+  //       callback(this.responseText); // devido a assincronicidade utiliza-se uma função callback
 
 
-      }
-    };
-    xhttp.open("GET", "https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22");
-    xhttp.send();
-  }
+  //     }
+  //   };
+  //   xhttp.open("GET", "https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22");
+  //   xhttp.send();
+  // }
 
-  tempo_londres(mostrar_dados);
+  // tempo_londres(mostrar_dados);
+
+  // Aula 52
+  $.ajax({
+    type: 'GET',
+    url: 'https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22',
+    //data: '',
+    dataType: 'json',
+    success: function (data) {
+      console.log(data.main.temp);
+    },
+    error: function () {
+      console.log('erro na requisição');
+    }
+  });
 
 
 
