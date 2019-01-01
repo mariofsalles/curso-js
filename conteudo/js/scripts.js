@@ -960,16 +960,49 @@ console.log(teste);
   // Aula 50
 
   // para versões internet explorer anterior a 6 é necessário declarar a variavel numa estrutura considicional
-  var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); 
+  // var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); 
 
-  xhttp.onreadystatechange = function () { // ON_READY_STATE_CHANGE -> testa os estados e status
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
-    }
-  };
+  // xhttp.onreadystatechange = function () { // ON_READY_STATE_CHANGE -> testa os estados e status
+  //   if (this.readyState == 4 && this.status == 200) {
+  //     console.log(this.responseText);
+  //   }
+  // };
 
-  xhttp.open("GET", "https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22");
-  xhttp.send();
+  // xhttp.open("GET", "https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22");
+  // xhttp.send();
+
+// Aula 51
+  function mostrar_temperatura(dados){
+    var dados_obj = JSON.parse(dados);
+    console.log('Temperatura de Londres ' + dados_obj.main.temp + ' Celsius.');
+  }
+
+  function mostrar_dados(dados) {
+    var dados_obj = JSON.parse(dados);
+    console.log(dados_obj);
+  }
+
+  function tempo_londres(callback) {
+    var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        callback(this.responseText); // devido a assincronicidade utiliza-se uma função callback
+
+
+      }
+    };
+    xhttp.open("GET", "https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22");
+    xhttp.send();
+  }
+
+  tempo_londres(mostrar_dados);
+
+
+
+
+
+
 
 
 });
