@@ -846,27 +846,54 @@ console.log(teste);
 
 // Aula 45
 
-  var nome = "";
-  if (nome) {
-    var mensagem = "Olá " + nome;
-  } else {
-    var mensagem = "Nome não informado.";
-  }
-  console.log(mensagem);
-  console.log('-------------------')
-  var mensagem;
-  var nome = 'Miguel.';
-  nome ? mensagem = 'Olá ' + nome : mensagem = "Nome não informado.";
-  // mensagem = nome?'Olá '+nome:'Nome não informado.';
-  console.log(mensagem);
-  console.log('-------------------')
+  // var nome = "";
+  // if (nome) {
+  //   var mensagem = "Olá " + nome;
+  // } else {
+  //   var mensagem = "Nome não informado.";
+  // }
+  // console.log(mensagem);
+  // console.log('-------------------')
+  // var mensagem;
+  // var nome = 'Miguel.';
+  // nome ? mensagem = 'Olá ' + nome : mensagem = "Nome não informado.";
+  // // mensagem = nome?'Olá '+nome:'Nome não informado.';
+  // console.log(mensagem);
+  // console.log('-------------------')
 
-  var mensagem1, idade, nome1;
-  mensagem1 = (nome1&&idade)?'Olá '+nome1+', você tem '+idade+' anos.'
-    : (!nome1 && !idade)? 'Nome e idade não informado'
-    : (!idade)? 'Idade não informada'
-    : 'Nome não informado.';
-  console.log(mensagem1);
+  // var mensagem1, idade, nome1;
+  // mensagem1 = (nome1&&idade)?'Olá '+nome1+', você tem '+idade+' anos.'
+  //   : (!nome1 && !idade)? 'Nome e idade não informado'
+  //   : (!idade)? 'Idade não informada'
+  //   : 'Nome não informado.';
+  // console.log(mensagem1);
+
+// Aula 46
+  var nome;
+  function criar_nome() {
+    nome = 'Maria';
+    console.log(nome); // O console mostrará 'Maria'
+  }
+  criar_nome();
+  console.log(nome); // Este comando gerará um erro, 
+  console.log('-------------------');
+
+  // var x = 0;
+  // if (x==0){
+  //   let nome1 = 'Mariana';
+  // }
+  // console.log(nome1);
+  //console.log('-------------------');
+
+  for (let a =0; a <5; a++){ // a declaração por meio de let auxilia em criar variaveis 
+    // a ser executadas somente dentro do bloco
+    console.log(a);
+  }
+
+  const PI = 3.14; // não pode ser alterada;
+
+
+
 
 
 
