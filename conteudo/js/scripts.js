@@ -816,20 +816,33 @@ console.log(teste);
   //     });
   // });  
 
-  // Aula 43
-  function pegar_usuario(callback) {
-    window.setTimeout(function () {
+  // Aula 43 e 44
+  function pegar_usuario() {
+    //window.setTimeout(function () {
       var u = {
         'nome': 'João'
       };
-      callback(u)
-    }, 2000);
+      return u;
+    //}, 1000);
   }
-  // observar que a função possui a mesma estrutura de sintaxe do JQuery, em outras palavras o JQuery
-  // é uma biblioteca de funçoes callback
-  pegar_usuario(function (user) {
+  
+  function saudar_usuario(user) {
     console.log('Olá ' + user.nome + ', como vai?');
-  })
+  }
+
+  // insere-se o comando try:
+  var user = {'nome':''};
+  try {
+    if (user.nome == ''){
+      throw 'Nome em branco'
+    }
+    saudar_usuario(user);
+  } catch (err){
+    console.log(err);
+  } 
+  // finally {
+  //   console.log('Este comando será sempre executado');
+  // }
 
 
 
